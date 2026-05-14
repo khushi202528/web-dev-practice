@@ -1,0 +1,169 @@
+
+<!-- ```html id="az8qf8"
+<!--
+CSS Selectors
+
+1. Element Selector
+   - Selects all elements of a specific HTML tag.
+   Example:
+   p {
+       color: blue;
+   }
+
+2. ID Selector (#)
+   - Selects one unique element using its id.
+   Example:
+   #header {
+       background-color: yellow;
+   }
+
+3. Class Selector (.)
+   - Selects all elements with the same class name.
+   Example:
+   .note {
+       color: green;
+   }
+
+4. Universal Selector (*)
+   - Selects all HTML elements.
+   Example:
+   * {
+       margin: 0;
+       padding: 0;
+   }
+
+5. Group Selector (,)
+   - Selects multiple elements at the same time.
+   Example:
+   h1, h2, p {
+       color: purple;
+   }
+
+6. Descendant Selector (space)
+   - Selects elements inside another element.
+   Example:
+   div p {
+       color: blue;
+   }
+
+7. Child Selector (>)
+   - Selects direct child elements only.
+   Example:
+   div > p {
+       color: red;
+   }
+
+8. Adjacent Sibling Selector (+)
+   - Selects the immediate next sibling.
+   Example:
+   h1 + p {
+       color: orange;
+   }
+
+9. General Sibling Selector (~)
+   - Selects all following sibling elements.
+   Example:
+   h1 ~ p {
+       color: brown;
+   }
+
+10. Attribute Selector
+    - Selects elements based on attributes.
+    Example:
+    input[type="text"] {
+        border: 1px solid blue;
+    }
+
+11. Pseudo-Class Selector (:)
+    - Selects elements in a special state.
+    Example:
+    a:hover {
+        color: red;
+    }
+
+12. Pseudo-Element Selector (::)
+    - Selects a specific part of an element.
+    Example:
+    p::first-letter {
+        font-size: 30px;
+    }
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CSS Selctor</title>
+    <style>
+        /* This is elment selector  */
+        /* HTML tag name se slect krta hai here that tag name is H1 */
+        h1{
+            color:rgb(97, 11, 11)
+        }
+        /* IID Selector */
+        /* kisi ek unique elemnet ko id se slecet  */
+        /*  #id{
+                    color : red;} */
+        #k{
+            background-color : pink
+        }
+
+        /*  CLASS SELECTOR */
+        /* CLASS KO USE KRKAI html ELEMENT ko use krne kai liye */
+        /* "." USE HOTA hai  */
+        .hi{
+            background-color: rgb(50, 41, 208);
+        }
+        /*  universal selector we use "*" */
+        * {
+            margin: 5px;
+            padding: 4px;
+        }
+        /* group selector  */
+        h1,p{
+            background-color: red;
+            /*  this is like how we have wrooten can sleect dooferent type of elmne of element all at once */
+        }
+        /* -------ADVANCED SELECTOR------------ */
+        /* Decendant selector */
+        /* parent kai andr kai elen=ment ko slelect krta hai */
+        /* yha pr codooe o mai header ka h2 ki baat ho ri hai blue krne ki  */
+        header h2 {
+            color: blue;
+        }
+        a:hover {
+            color : red
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <h1> What is CSS Selector </h1>
+    <p> On which HTML element these 
+        css rule will apply </p>
+    <h2> Basic syntaxt of selector</h2>
+
+    </p id="9">
+     selector{<br>
+            &nbsp;&nbsp;&nbsp;property: value;
+            }
+    </p>
+            
+    </header>
+   
+    <h1>  ID selector</h1>
+    <p id="k">gbgcv<br>>ID unique hori hai he lement ki <br> tho isse specifically hum unique elment ko target <br>krte hai </p> 
+
+    <h1> Class selector</h1>
+    <p id="ff" class="hi hi1">hi this is claas slector and ism hum element ko class ki help se design krte hai <br> amd we can have to single class of difeeranr elemrnt </p>
+    <br>
+    <h2> Universal element</h2>
+    <p> here we work on margin and padding <br> In this it s very important to wrote after wrooting any value on other then zero "px"</p>
+    <h2> Group selector </h2>
+    <p> In this we can select diferent element all at once </p>
+    <a href="https\www.google.com">google</a>
+    
+    
+</body>
+</html>
