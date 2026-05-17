@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List styling</title>
+
+        <!-- /*  /* 
+        nav ul li
+        = Selects all <li> elements that are inside a <ul>,
+          which is inside a <nav> element.
+
+        list-style: devanagari;
+        = Shorthand property that sets the list marker style to Devanagari numbers
+          (१, २, ३, ...).
+        = This is overridden by the next property.
+
+        list-style-type: "🔥";
+        = Replaces the default bullet with a custom emoji marker.
+        = Final visible output will use 🔥 as the bullet for each list item.
+
+        background-color: yellow;
+        = (Commented out)
+        = Would set the background color of each list item to yellow.
+
+        list-style-position: inside;
+        = (Commented out)
+        = Moves the bullet inside the content box and inside the border.
+        = Default value is outside.
+
+        border: 2px solid black;
+        = Adds a 2px solid black border around each list item.
+
+        list-style: disc inside url(...);
+        = (Commented out)
+        = Shorthand that can set:
+            1. list-style-type   -> disc
+            2. list-style-position -> inside
+            3. list-style-image  -> custom image/GIF
+
+        list-style-image: url(...);
+        = (Commented out)
+        = Replaces the bullet with the specified image or GIF.
+
+        Important:
+        - Later CSS properties override earlier ones.
+        - Therefore, list-style-type: "🔥"; overrides list-style: devanagari;
+        - Final result:
+            🔥 Home
+            🔥 About
+            🔥 Contact
+          with a black border around each item.
+        */
+
+        /* nav ul li { */
+            /* list-style: devanagari;
+            list-style-type: "🔥"; */
+            /* background-color: yellow; */
+            /* list-style-position: inside; */
+            /* border: 2px solid black; */
+            /* list-style: disc inside url("https://user-images.githubusercontent.com/14011726/94132137-7d4fc100-fe7c-11ea-8512-69f90cb65e48.gif"); */
+            /* list-style-image: url("https://user-images.githubusercontent.com/14011726/94132137-7d4fc100-fe7c-11ea-8512-69f90cb65e48.gif"); */
+        /* } */ -->
+    </style> 
+        .hey {
+            letter-spacing: 0cqmax;
+            list-style-type: circle;
+            border: 10px solid rgb(163, 225, 8);
+            list-style-position: inside;
+            background-color: #940707;
+            list-style-type: lower-alpha ;
+            list-style-type: "🔥";
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav>
+            <ul class="hey">
+                <li> Home</li>
+                <li> contact</li>
+                <li> about</li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
