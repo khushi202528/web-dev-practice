@@ -1,92 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Relative - Apni orginal position se change hogi
-Absolute - apne parent ke relative position change hogi
-Fixed - page mein position fixed hojaygi
-Sticky - page mein kahin bhi ho, scroll krne pr neeche nhi jaygi, stick hojaygi
+<!--
+=============================================================================
+CSS POSITION NOTES
+=============================================================================
 
- -->
+1. Relative
+   - Element apni original position ke relative move hota hai.
+   - top, left, right, bottom ka effect hota hai.
+   - Original space document flow me reserved rehti hai.
+
+2. Absolute
+   - Element nearest positioned parent (relative/absolute/fixed/sticky)
+     ke relative position leta hai.
+   - Agar koi positioned parent na ho, to viewport/html ke relative
+     position leta hai.
+   - Document flow se bahar ho jata hai.
+
+3. Fixed
+   - Element viewport (browser window) ke relative fixed hota hai.
+   - Scroll karne par bhi wahi rehta hai.
+   - Document flow se bahar hota hai.
+
+4. Sticky
+   - Relative + Fixed ka combination.
+   - Normal flow me rehta hai.
+   - Scroll threshold (e.g. top: 0) par fixed ki tarah stick ho jata hai.
+
+-----------------------------------------------------------------------------
+IMPORTANT SPECIAL PROPERTIES
+-----------------------------------------------------------------------------
+Agar parent par inme se koi property lagi ho:
+- transform
+- filter
+- perspective
+
+to child element (especially absolute/fixed) us parent ko
+reference context ke roop me use kar sakta hai, even without
+position: relative.
+=============================================================================
+-->
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS POSITION</title>
-    <p> Relative - Apni orginal position se change hogi
-        Absolute - apne parent ke relative position change hogi
-        Fixed - page mein position fixed hojaygi
-        Sticky - page mein kahin bhi ho, scroll krne pr neeche nhi jaygi, stick hojaygi</p>
-    <Style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Position</title>
+
+    <style>
+        /* Reset default margin and padding */
         * {
-            margin: 0px;
-            padding: 0px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .box {
-            height:3px;
-            width: 80vw;
-            padding: 3px;
-            margin: 3px;
-            border: 2px solid black;
+        /* Explanation text styling */
+        p {
+            padding: 15px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
         }
 
-        .box1 {
-            background-color: aqua;
-            position: absolute;
-            top: 0px;
-            /* absolute=Absolute - apne parent ke relative position change hogi
-            iska parent pehle class="parent hai " mgr uski posotion static hai kuch given nahi hai 
-            fir woh body se puchega aap kai hai agr nahi tho woh direct html se ouchega aur
-             html bolega hai nahi lekin tu mere ider yani uspk relatve lag jyega  */
-
-            /* IF parent postion kai pass rhega tho woh usk alogn reltive ho jyega  */
-        }
-
-        .box2 {
-            background-color: blue;
-            position: relative;
-            top: 34px;
-            right:5px;
-        }
-
-        .box3 {
-            background-color: sandybrown;
-            position: fixed;
-            /* 
-   Easy Memory Trick:
-   - Fixed = Permanently chipka hua.
-   - Sticky = Scroll karte-karte chipakta hai. */
-            top: 0px;
-            left: 4px;
-        }
-
-        .box4 {
-            background-color: pink;
-        }
-
+        /* Parent container */
         .parent {
             padding: 53px;
             margin: 34px;
             border: 3px solid purple;
+
+            /* Positioned parent for absolute children */
             position: relative;
-            top: 5px
-            /* transform: translate(0); */
-            /* filter: invert(5) */
-            /* perspective: 0em */
-            /* -------------------------important properties----------------------------------------
-                - transform - filter - perspective Agar parent par inme se koi property lagi ho,
-                to child element (especially position: absolute ya fixed) us parent ko reference maan sakta hai.
-        } */
-    </Style>
+            top: 5px;
+
+            /*
+            Alternative properties that can also create a containing context:
+            transform: translate(0);
+            filter: invert(0);
+            perspective: 1000px;
+            */
+        }
+
+        /* Common box styling */
+        .box {
+            height: 60px;
+            width: 80vw;
+            margin: 3px;
+            border: 2px solid black;
+        }
+
+        /* Absolute Position */
+        .box1 {
+            background-color: aqua;
+
+            /*
+            Absolute:
+            - Nearest positioned parent ke relative move hota hai.
+            - Yahan .parent par position: relative hai,
+              isliye .box1 uske relative position lega.
+            */
+            position: relative;
+            top: 50;
+            left: 0;
+        }
+
+        /* Relative Position */
+        .box2 {
+            background-color: blue;
+
+            /*
+            Relative:
+            - Apni original position ke relative move hota hai.
+            - Original space reserved rehti hai.
+            */
+            position: relative;
+            top: 34px;
+            right: 5px;
+        }
+
+        /* Fixed Position */
+        .box3 {
+            background-color: sandybrown;
+
+            /*
+            Fixed:
+            - Viewport ke relative fixed hota hai.
+            - Scroll karne par bhi wahi rehta hai.
+            */
+            position: fixed;
+            top: 0;
+            left: 4px;
+        }
+
+        /* Normal static box */
+        .box4 {
+            background-color: pink;
+        }
+    </style>
 </head>
 
 <body>
+    <p>
+        Relative - Apni original position se move hota hai.<br />
+        Absolute - Nearest positioned parent ke relative position leta hai.<br />
+        Fixed - Viewport par permanently fixed rehta hai.<br />
+        Sticky - Scroll karte hue threshold par stick ho jata hai.
+    </p>
+
     <div class="parent">
-
-        <div class="box box1"> </div>
-        <div class="box box2"> </div>
-        <div class="box box3"> </div>
-        <div class="box box4"> </div>
-
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
     </div>
 </body>
 
