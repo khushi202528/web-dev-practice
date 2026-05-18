@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        :root{              
+            /* this is variable consinder karne kai liye */
+            --color: blueviolet;
+            --defpad: 35px;
+        }
+        #tu{
+            background-color: var(--color);
+            padding:var(--defpad) ;
+            /* tho basically aese hi use krna hai var(--function name) */
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p id="tu"> we use root in style for any variable</p>
+        <p>root mai ariable ka kuch bhi naam de kr we can change it very easily</p>
+    </div>    
+</body>
+</html>
