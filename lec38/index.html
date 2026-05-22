@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css Flexbox</title>
+        <style>/* ================= CONTAINER ================= */
+
+.container {
+
+    /* Container ke around red border */
+    border: 2px solid red;
+
+    /* Flexbox activate karta hai */
+    display: flex;
+
+    /* Container screen ki 80% height lega */
+    height: 80vh;
+
+    /* Horizontal alignment */
+    /* Items ko center me lane ke liye */
+    /* justify-content: center; */
+
+    /* Vertical alignment */
+    /* Items vertically center me aayenge */
+    align-items: center;
+
+    /* Items ko column direction me lane ke liye */
+    /* Default row hota hai */
+    /* flex-direction: column; */
+
+    /* Space kam hone par next line me bhejta hai */
+    flex-wrap: wrap;
+
+    /* Multiple rows ki alignment */
+    /* align-content: flex-start; */
+
+    /* Flexbox me justify-items nahi hota */
+    /* there is no justify-items in flexbox */
+
+    /* Shortcut:
+       flex-direction + flex-wrap */
+    flex-flow: row wrap;
+
+    /* Gap between items */
+
+    /* Sab side same gap */
+    /* gap: 30px; */
+
+    /* Row gap */
+    /* row-gap: 40px; */
+
+    /* Column gap */
+    /* column-gap: 10px; */
+
+    /* row-gap = 40px
+       column-gap = 10px */
+    gap: 40px 10px;
+}
+
+
+/* ================= ITEMS ================= */
+
+.item {
+
+    /* Extra space milne par grow karega */
+    /* flex-grow: 1; */
+
+    /* Fixed height */
+    height: 92px;
+
+    /* Fixed width */
+    width: 92px;
+
+    /* Black border */
+    border: 2px solid black;
+
+    /* External spacing */
+    /* margin: 4px; */
+
+    /* Background color */
+    background-color: blueviolet;
+}
+
+
+/* ================= ORDER ================= */
+
+/* Item ki position change karne ke liye */
+
+.order-1{
+    order: 1;
+}
+
+.order-2{
+    order: 2;
+}
+
+.order-3{
+    order: 3;
+}
+
+
+/* ================= SINGLE ITEM CONTROL ================= */
+
+.item1{
+
+    /* Dusre items se zyada grow karega */
+    /* flex-grow: 2; */
+
+    /* Screen choti hone par zyada shrink karega */
+    /* flex-shrink: 2; */
+
+    /* Sirf ek item ki alignment change */
+    /* Item niche chala jayega */
+    align-self: flex-end;
+}
+    
+        </style>
+    
+</head>
+<body>
+       <div class="container">
+            <div class="item item1">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item order-1">4</div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+</body>
+</html>
