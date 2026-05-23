@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Create a multicolor nav which can change color using CSS Variables</title>
+</head>
+<style>
+    :root{
+        --primary-color:rgb(107, 97, 223);
+        --font-size : 45px;
+        --font-color:  rgb(193, 163, 13);
+    }
+    ul{
+        display: flex;
+        background-color: var(--primary-color);
+        font-size: var(--font-size);
+        color: var(--font-color);
+        justify-content: center;
+        gap:40px;
+        list-style: none;
+        padding: 40px;
+
+    }
+
+</style>
+<body>
+    <nav>
+        <ul>
+            <li> Home</li>
+            <li>
+                About
+            </li>
+            <li> Careare</li>
+            <li> contact</li>
+        </ul>
+    </nav>
+    
+
+</body>
+</html>
