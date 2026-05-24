@@ -6,9 +6,6 @@ I'm learning web development and using this repository to document my daily prac
 
 - HTML5
 - CSS3
-- Flexbox
-- Grid
-- Selectors
-- Positioning
-- Responsive Design
 - JavaScript
+- Node.js
+- MongoDb
